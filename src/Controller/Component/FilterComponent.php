@@ -121,7 +121,7 @@ class FilterComponent extends Component
         $conditions = [];
         
         // se for post, pega os dados para montar conditions
-        foreach ($this->the_controller->request->data as $filter => $value) {
+        foreach ($this->the_controller->getRequest()->getData() as $filter => $value) {
             
             if (array_key_exists($filter, $this->filters)) { // se o filtro existe
                                                              
@@ -141,7 +141,7 @@ class FilterComponent extends Component
         
         $exclude = $this->pagination_key;
         
-        foreach ($this->the_controller->request->query as $qr_filter => $value) {
+        foreach ($this->the_controller->getRequest()->getQuery() as $qr_filter => $value) {
             
             if (in_array($qr_filter, $this->pagination_key)) {
                 continue;
@@ -156,24 +156,24 @@ class FilterComponent extends Component
                     $operator = isset($this->filters[$qr_filter]['operator']) ? $this->filters[$qr_filter]['operator'] : '=';
                     
                     $this->_url[$qr_filter] = $value;
-                    $this->the_controller->request->data[$qr_filter] = in_array($operator, [
+                    $this->the_controller->getRequest()->setData($qr_filter, in_array($operator, [
                         'IN',
                         'NOT IN'
-                    ]) ? explode(',', $value) : $value; // mantem data preenchido...
-                    $this->the_controller->request->query[$qr_filter] = in_array($operator, [
+                    ]) ? explode(',', $value) : $value); // mantem data preenchido...
+                    $this->the_controller->getRequest()->setData($qr_filter, in_array($operator, [
                         'IN',
                         'NOT IN'
-                    ]) ? explode(',', $value) : $value;
+                    ]) ? explode(',', $value) : $value);
                     
                     $conditions = array_merge($conditions, $this->getFilter($field, $value, $qr_filter));
                 }
             }
         }
         
-        $session = $this->the_controller->request->session();
+        $session = $this->the_controller->getRequest()->getSession();
         
         // tenta restaurar o filtro salvo na sessao
-        if (! $this->the_controller->request->is('post') && empty($conditions) && isset($save['session'])) {
+        if (! $this->the_controller->getRequest()->is('post') && empty($conditions) && isset($save['session'])) {
             $session_id = $save['session'];
             $saved_query = $session->read($session_id);
             
@@ -192,10 +192,10 @@ class FilterComponent extends Component
                             $operator = isset($this->filters[$qr_filter]['operator']) ? $this->filters[$qr_filter]['operator'] : '=';
                             
                             $this->_url[$qr_filter] = $value;
-                            $this->the_controller->request->data[$qr_filter] = in_array($operator, [
+                            $this->the_controller->getRequest()->setData($qr_filter, in_array($operator, [
                                 'IN',
                                 'NOT IN'
-                            ]) ? explode(',', $value) : $value; // mantem data preenchido...
+                            ]) ? explode(',', $value) : $value); // mantem data preenchido...
                             
                             $conditions = array_merge($conditions, $this->getFilter($field, $value, $qr_filter));
                         }

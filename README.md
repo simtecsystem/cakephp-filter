@@ -1,4 +1,4 @@
-# Filter plugin for CakePHP 3.x
+# Filter plugin for CakePHP >3.6.x
 
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](README.md)
 [![Total Downloads](https://img.shields.io/packagist/dt/simtecsystem/cakephp-filter.svg?style=flat-square)](https://packagist.org/packages/simtecsystem/cakephp-filter)
