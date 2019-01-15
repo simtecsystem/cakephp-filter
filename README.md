@@ -1,10 +1,10 @@
 # Filter plugin for CakePHP 3.x
 
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](README.md)
-[![Total Downloads](https://img.shields.io/packagist/dt/brenoroosevelt/cakephp-filter.svg?style=flat-square)](https://packagist.org/packages/brenoroosevelt/cakephp-filter)
-[![Latest Stable Version](https://img.shields.io/packagist/v/brenoroosevelt/cakephp-filter.svg?style=flat-square&label=stable)](https://packagist.org/packages/brenoroosevelt/cakephp-filter)
-[![Build Status](https://img.shields.io/travis/brenoroosevelt/cakephp-filter/master.svg?style=flat-square)](https://travis-ci.org/brenoroosevelt/cakephp-filter)
-[![Coverage Status](https://img.shields.io/codecov/c/github/brenoroosevelt/cakephp-filter.svg?style=flat-square)](https://codecov.io/github/brenoroosevelt/cakephp-filter)
+[![Total Downloads](https://img.shields.io/packagist/dt/simtecsystem/cakephp-filter.svg?style=flat-square)](https://packagist.org/packages/simtecsystem/cakephp-filter)
+[![Latest Stable Version](https://img.shields.io/packagist/v/simtecsystem/cakephp-filter.svg?style=flat-square&label=stable)](https://packagist.org/packages/simtecsystem/cakephp-filter)
+[![Build Status](https://img.shields.io/travis/simtecsystem/cakephp-filter/master.svg?style=flat-square)](https://travis-ci.org/simtecsystem/cakephp-filter)
+[![Coverage Status](https://img.shields.io/codecov/c/github/simtecsystem/cakephp-filter.svg?style=flat-square)](https://codecov.io/github/simtecsystem/cakephp-filter)
 
 ## Installation
 
@@ -13,7 +13,7 @@ You can install this plugin into your CakePHP application using [composer](http:
 The recommended way to install composer packages is:
 
 ```
-composer require brenoroosevelt/cakephp-filter
+composer require simtecsystem/cakephp-filter
 ```
 ### Load the plugin
 
