@@ -156,11 +156,11 @@ class FilterComponent extends Component
                     $operator = isset($this->filters[$qr_filter]['operator']) ? $this->filters[$qr_filter]['operator'] : '=';
                     
                     $this->_url[$qr_filter] = $value;
-                    $this->the_controller->getRequest()->setData($qr_filter, in_array($operator, [
+                    $this->the_controller->getRequest()->withData($qr_filter, in_array($operator, [
                         'IN',
                         'NOT IN'
                     ]) ? explode(',', $value) : $value); // mantem data preenchido...
-                    $this->the_controller->getRequest()->setData($qr_filter, in_array($operator, [
+                    $this->the_controller->getRequest()->withData($qr_filter, in_array($operator, [
                         'IN',
                         'NOT IN'
                     ]) ? explode(',', $value) : $value);
@@ -192,7 +192,7 @@ class FilterComponent extends Component
                             $operator = isset($this->filters[$qr_filter]['operator']) ? $this->filters[$qr_filter]['operator'] : '=';
                             
                             $this->_url[$qr_filter] = $value;
-                            $this->the_controller->getRequest()->setData($qr_filter, in_array($operator, [
+                            $this->the_controller->getRequest()->withData($qr_filter, in_array($operator, [
                                 'IN',
                                 'NOT IN'
                             ]) ? explode(',', $value) : $value); // mantem data preenchido...
